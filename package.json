@@ -1,0 +1,84 @@
+{
+	"name": "test-scenarios-extractor",
+	"displayName": "Test Scenarios Extractor",
+	"description": "Extracts documentation from source code files",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.37.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:testExtractor.extractFromActiveEditor",
+		"onCommand:testExtractor.extractFromDirectory"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"category": "Test Scenarios Extractor",
+				"command": "testExtractor.extractFromActiveEditor",
+				"title": "Extract from active editor"
+			},
+			{
+				"category": "Test Scenarios Extractor",
+				"command": "testExtractor.extractFromDirectory",
+				"title": "Extract from directory"
+			}
+		],
+		"configuration":{
+			"title": "Test Scenarios Extractor",
+			"properties": {
+				"test-scenarios-extractor.tags.areaTag": {
+					"type": "string",
+					"scope": "window",
+					"default": "[AREA]",
+					"description": "This is the tag that occours once in each file and describes the scope of the test object"
+				},
+				"test-scenarios-extractor.tags.scenariosTag": {
+					"type": "string",
+					"scope": "window",
+					"default": "[SCENARIO]",
+					"description": "This is the tag that describes the scenario of each test"
+				},
+				"test-scenarios-extractor.tags.preconditionsTag": {
+					"type": "string",
+					"scope": "window",
+					"default": "[GIVEN]",
+					"description": "This is the tag that exists in each test and describes the preconditions"
+				},
+				"test-scenarios-extractor.tags.activitiesTag": {
+					"type": "string",
+					"scope": "window",
+					"default": "[WHEN]",
+					"description": "This is the tag that describes the activity that happens during the test"
+				},
+				"test-scenarios-extractor.tags.assertionsTag": {
+					"type": "string",
+					"scope": "window",
+					"default": "[THEN]",
+					"description": "This is the tag that describes the assertions and expected results of the test"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^5.2.6",
+		"@types/node": "^10.12.21",
+		"@types/vscode": "^1.37.0",
+		"glob": "^7.1.4",
+		"mocha": "^6.1.4",
+		"typescript": "^3.3.1",
+		"tslint": "^5.12.1",
+		"vscode-test": "^1.0.2"
+	}
+}
