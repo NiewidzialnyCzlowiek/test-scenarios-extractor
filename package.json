@@ -1,7 +1,7 @@
 {
 	"name": "test-scenarios-extractor",
-	"displayName": "test-scenarios-extractor",
-	"description": "Extracts documentation from .al files",
+	"displayName": "Test Scenarios Extractor",
+	"description": "Extracts documentation from source code files",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.37.0"
