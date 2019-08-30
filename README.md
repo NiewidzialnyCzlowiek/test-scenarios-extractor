@@ -1,7 +1,5 @@
 # Test Scenarios Extractor
 
-This is the README for your extension "test-scenarios-extractor". After writing up a brief description, we recommend including the following sections.
-
 ## Features
 
 The extension is able to extract test scenarios written in the comments in source code files. Currently there are two available commands:
