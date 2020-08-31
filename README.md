@@ -1,5 +1,7 @@
 # Test Scenarios Extractor
 
+Test Scenarios Extractor is a very simple Visual Studio Code extension that enables the user to extract comments from source code. It was created as a utility to find tags that describe tests and export them to csv file in order to create the list of implemented tests.
+
 ## Features
 
 The extension is able to extract test scenarios written in the comments in source code files. Currently there are two available commands:
